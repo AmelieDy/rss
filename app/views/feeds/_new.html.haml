@@ -1,0 +1,24 @@
+= form_for @feed, role: 'form', class: 'form-inline', remote: true  do |f|
+  - if @feed.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@feed.errors.count, "error")
+        prohibited this Company rom being saved:
+      %ul
+        - @feed.errors.full_messages.each do |message|
+          %li= message
+
+  .row
+    .col-lg-6
+      .panel.panel-default
+        .panel-body
+          .form-group
+            = f.label :title, "Titre"
+            = f.text_field :title, class: 'form-control'
+          .form-group
+            = f.label :url, "URL"
+            = f.text_field :url, class: 'form-control'
+
+  .row
+    .col-lg-6
+      = f.submit 'GO', class: 'btn btn-lg btn-primary', id: 'submit_feed'

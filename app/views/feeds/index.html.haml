@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-lg-12
+      .text-right
+
+        = link_to 'Ajouter un flux', new_feed_url,
+                                     remote: true,
+                                     id: 'new_feed',
+                                     class: 'btn btn-primary'
+      #form_feed
+
+
+
+  .row
+    - @feeds.each do |feed|
+      = render 'feed', feed: feed

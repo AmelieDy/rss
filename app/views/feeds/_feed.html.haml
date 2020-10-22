@@ -1,0 +1,11 @@
+.col-sm-12.col-lg-4
+  .card
+    .card-body
+      %p= feed.title
+      %p= feed.url
+
+      - feed.contents.each do |item|
+        %ul.list-group
+          %li.list-group-item
+            %p= item.title
+            %p= item.description.truncate(255)
