@@ -4,11 +4,9 @@ class CreateContents < ActiveRecord::Migration[6.0]
       t.integer   :feed_id, index: true
       t.string    :title
       t.text      :description
-      t.string    :author
-      t.string    :category
       t.string    :url
       t.datetime  :pub_date
-      t.boolean   :status
+      t.boolean   :readed, default: false
       t.timestamps
     end
   end

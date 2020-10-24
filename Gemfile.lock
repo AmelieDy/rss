@@ -80,12 +80,14 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.9.0)
+    feedvalidator (0.2.2)
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.2.0)
       temple (>= 0.8.0)
       tilt
+    htmlentities (4.3.4)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
@@ -181,6 +183,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    shoulda-matchers (4.4.1)
+      activesupport (>= 4.2.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -201,6 +205,9 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    validate_url (1.0.13)
+      activemodel (>= 3.0.0)
+      public_suffix
     web-console (4.0.4)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -225,24 +232,30 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   dotenv-rails
+  feedvalidator
   haml
+  htmlentities
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2
+  nokogiri
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.3)
   rspec-rails
   rss
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
+  validate_url
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)

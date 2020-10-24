@@ -1,0 +1,13 @@
+current directory: /home/amelie/Documents/rss/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+/home/amelie/.rbenv/versions/2.7.0/bin/ruby -I /home/amelie/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20201023-15660-sg2ten.rb extconf.rb
+creating Makefile
+
+current directory: /home/amelie/Documents/rss/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/amelie/Documents/rss/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+make "DESTDIR="
+make: rien à faire pour « all ».
+
+current directory: /home/amelie/Documents/rss/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" install

@@ -1,0 +1,7 @@
+- if item.readed?
+  %span= "lu"
+- else
+  = link_to 'Marquer comme lu', feed_path(item.id),
+                                method: :put,
+                                remote: true,
+                                id: 'read'

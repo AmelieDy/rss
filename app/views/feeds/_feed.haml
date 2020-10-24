@@ -1,0 +1,18 @@
+.col-sm-12.col-lg-6
+  .card.mb-5
+    .card-header
+      %h4= feed.title
+      %p= link_to feed.url, feed.url
+    .card-body
+      %ul.list-group
+        - feed.contents.each do |item|
+          %li.list-group-item.mb-3
+            %b
+              = link_to item.title.truncate(35), item.url,
+                                                 id: "title-item-#{item.id}",
+                                                 class: "#{item.readed ? 'text-grey' : 'text-black'}"
+            .float-right.pub_date= item.pub_date.to_formatted_s(:short)
+            %p.description.mt-2.float-left= strip_links(item.description).html_safe
+            .float-right
+              %div{id: "status-item-#{item.id}"}
+                = render 'feed_item_status', item: item

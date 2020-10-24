@@ -1,0 +1,6 @@
+// render partial status
+$('#status-item-<%= @content.id %>').empty();
+$('#status-item-<%= @content.id %>').append("<%= j render  'feed_item_status', item: @content %>");
+// change title color
+$('#title-item-<%= @content.id %>').removeClass('text-black');
+$('#title-item-<%= @content.id %>').addClass('text-grey');

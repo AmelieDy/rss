@@ -1,3 +1,11 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.card-body {
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+.pub_date {
+  font-size: 12px;
+}

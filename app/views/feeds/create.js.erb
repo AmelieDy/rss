@@ -1,1 +1,10 @@
-$(".col-lg-4").last().after().append("<%= j render 'feeds/feed', feed: @feed %>");
+//remove old validation messages
+$("#feed_form_errors").empty();
+<% if @feed.errors.any? %>
+  //display new validation messages
+  <% @feed.errors.each do |key, value| %>
+    $("#feed_form_errors").append('<div class=”notice”><%= escape_javascript(key)%> <%= escape_javascript(value)%></div>');
+  <% end %>
+<% else %>
+  $("#render_feed").after().append("<%= j render 'feeds/feed', feed: @feed %>");
+<% end %>

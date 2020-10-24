@@ -16,11 +16,9 @@ ActiveRecord::Schema.define(version: 2020_10_21_153615) do
     t.integer "feed_id"
     t.string "title"
     t.text "description"
-    t.string "author"
-    t.string "category"
     t.string "url"
     t.datetime "pub_date"
-    t.boolean "status"
+    t.boolean "readed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["feed_id"], name: "index_contents_on_feed_id"
