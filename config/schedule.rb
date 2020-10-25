@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 2.hours do
-  rake 'batch:send_messages'
+  rake 'feed:create_new_feed_items'
 end
