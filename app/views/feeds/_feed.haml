@@ -5,7 +5,8 @@
       %p= link_to feed.url, feed.url
     .card-body
       %ul.list-group
-        - feed.contents.order('pub_date DESC').each do |item|
+        - contents = feed.contents.order('pub_date DESC').page(params[:page])
+        - contents.each do |item|
           %li.list-group-item.mb-3
             %b
               = link_to item.title.truncate(35), item.url,
@@ -16,3 +17,5 @@
             .float-right
               %div{id: "status-item-#{item.id}"}
                 = render 'feed_item_status', item: item
+    .card-footer
+      = paginate contents
