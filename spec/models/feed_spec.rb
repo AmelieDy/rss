@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe Feed, type: :model do
   subject {
     described_class.new(title: "Anything",
-                        url: "https://example.com")
+                        url: "https://www.touslesdrivers.com/php/scripts/news_rss.php")
   }
   context 'validation tests' do
     it 'ensures valid attributes' do
@@ -18,12 +18,12 @@ RSpec.describe Feed, type: :model do
       subject.url = nil
       expect(subject).to_not be_valid
     end
-    it 'ensures valid feed' do
-    end
 
   end
 
-  describe "Associations" do
+  context "Associations" do
     it { should have_many(:contents).without_validating_presence }
   end
+
+  
 end
