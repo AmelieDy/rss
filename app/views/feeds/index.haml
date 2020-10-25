@@ -1,7 +1,11 @@
 .container
-  .row
+  #flash
+    - if notice.present?
+      = render partial: "shared/notice_banner"
+
+  .row.mb-5
     .col-lg-12
-      .text-right
+      .float-right
 
         = link_to 'Ajouter un flux', new_feed_url,
                                      remote: true,

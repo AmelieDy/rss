@@ -37,9 +37,15 @@ gem 'haml'
 gem "validate_url"
 # Validate an XML document against an XSD schema with Ruby and Nokogiri
 gem "nokogiri"
-#check url 
+#check url
 gem 'feedvalidator'
 gem 'addressable'
+gem "feedjira"
+gem "faraday"
+
+
+gem 'whenever', require: false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

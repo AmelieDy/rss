@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_153615) do
 
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "feed_id"
+    t.string "document_feed_id"
     t.string "title"
     t.text "description"
     t.string "url"
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_153615) do
     t.boolean "readed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["document_feed_id"], name: "index_contents_on_document_feed_id"
     t.index ["feed_id"], name: "index_contents_on_feed_id"
   end
 

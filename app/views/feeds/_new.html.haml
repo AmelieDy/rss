@@ -1,7 +1,7 @@
 = form_for @feed, role: 'form', class: 'form-inline', remote: true  do |f|
 
   .row
-    .col-lg-6
+    .offset-lg-2.col-lg-10
       .panel.panel-default
         .panel-body
           .form-group
@@ -11,7 +11,6 @@
             = f.label :url, "URL"
             = f.url_field :url, class: 'form-control'
 
-  .row
-    .col-lg-6
-      = f.submit 'GO', class: 'btn btn-lg btn-primary', id: 'submit_feed'
-      %div{id: "feed_form_errors"}
+          .float-right
+            = f.submit 'GO', class: 'btn btn-lg btn-primary', id: 'submit_feed'
+            %div{id: "feed_form_errors"}

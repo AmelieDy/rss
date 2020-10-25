@@ -1,5 +1,4 @@
 class FeedsController < ApplicationController
-
   def index
     @feeds = Feed.all
   end
@@ -13,13 +12,11 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.new(feed_params)
-
     respond_to do |format|
       if @feed.save
         CreateContentsJob.perform_now(@feed)
-        format.js
+        format.js { flash.now[:notice] = 'Le flux RSS a bien été ajouté' }
       else
-        puts 'nooooooooooooooo'
         format.js
         @feed.errors.any?
         @feed.errors.each do |key, value|
@@ -31,6 +28,9 @@ class FeedsController < ApplicationController
   def update
     @content = Content.find params[:id]
     @content.update(readed: 1)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def feed_params
